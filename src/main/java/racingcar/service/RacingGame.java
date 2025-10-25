@@ -1,4 +1,4 @@
-package racingcar.model;
+package racingcar.service;
 
 import racingcar.domain.Car;
 import racingcar.domain.CarState;

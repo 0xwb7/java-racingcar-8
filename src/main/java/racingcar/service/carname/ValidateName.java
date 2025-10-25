@@ -1,4 +1,4 @@
-package racingcar.model.carname;
+package racingcar.service.carname;
 
 import racingcar.exception.ErrorCode;
 import racingcar.exception.RacingException;

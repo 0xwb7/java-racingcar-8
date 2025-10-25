@@ -1,11 +1,11 @@
 package racingcar.controller;
 
 import racingcar.domain.CarState;
-import racingcar.model.RacingGame;
-import racingcar.model.carname.SplitCarName;
-import racingcar.model.carname.ValidateName;
-import racingcar.model.trycount.ParseCount;
-import racingcar.model.trycount.ValidateCount;
+import racingcar.service.RacingGame;
+import racingcar.service.carname.SplitCarName;
+import racingcar.service.carname.ValidateName;
+import racingcar.service.trycount.ParseCount;
+import racingcar.service.trycount.ValidateCount;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 

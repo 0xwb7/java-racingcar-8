@@ -11,7 +11,6 @@ import java.util.List;
 public record RacingGame(List<Car> cars, int rounds) {
 
     public static RacingGame of(List<String> carNames, int tryCount) {
-
         List<Car> cars = new ArrayList<>();
         for (String name : carNames) {
             cars.add(new Car(name));

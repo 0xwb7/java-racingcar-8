@@ -8,15 +8,15 @@ import racingcar.util.RandomNumber;
 import java.util.ArrayList;
 import java.util.List;
 
-public record RacingGame(List<Car> cars, int rounds) {
+public record RacingService(List<Car> cars, int rounds) {
 
-    public static RacingGame of(List<String> carNames, int tryCount) {
+    public static RacingService of(List<String> carNames, int tryCount) {
         List<Car> cars = new ArrayList<>();
         for (String name : carNames) {
             cars.add(new Car(name));
         }
 
-        return new RacingGame(cars, tryCount);
+        return new RacingService(cars, tryCount);
     }
 
     public List<CarState> playRound() {

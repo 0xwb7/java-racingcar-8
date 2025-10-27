@@ -1,4 +1,4 @@
-package racingcar.service.trycount;
+package racingcar.validator;
 
 import racingcar.exception.ErrorCode;
 import racingcar.exception.RacingException;

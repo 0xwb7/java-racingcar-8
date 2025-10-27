@@ -1,7 +1,8 @@
-package racingcar.service.carname;
+package racingcar.parser;
 
 import racingcar.exception.ErrorCode;
 import racingcar.exception.RacingException;
+import racingcar.validator.ValidateName;
 
 import java.util.ArrayList;
 import java.util.List;

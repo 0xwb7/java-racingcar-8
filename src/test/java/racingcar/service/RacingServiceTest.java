@@ -8,14 +8,14 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class RacingGameTest {
+class RacingServiceTest {
 
     @Test
     void 자동차_이름_라운드_수_car_객체생성_잘_되는지_확인() {
         List<String> carNames = List.of("car1", "car2", "car3");
         int rounds = 3;
 
-        RacingGame game = RacingGame.of(carNames, rounds);
+        RacingService game = RacingService.of(carNames, rounds);
 
         assertThat(game.rounds()).isEqualTo(rounds);
         assertThat(game.cars())
@@ -26,7 +26,7 @@ class RacingGameTest {
 
     @Test
     void 스냅샷_사이즈_체크() {
-        RacingGame game = RacingGame.of(List.of("car1", "car2", "car3"), 1);
+        RacingService game = RacingService.of(List.of("car1", "car2", "car3"), 1);
         List<CarState> carStates = game.playRound();
 
         assertThat(carStates).hasSize(3);
@@ -36,7 +36,7 @@ class RacingGameTest {
 
     @Test
     void 우승자_확인_테스트() {
-        RacingGame game = RacingGame.of(List.of("car1", "car2", "car3"), 1);
+        RacingService game = RacingService.of(List.of("car1", "car2", "car3"), 1);
 
         for (Car car : game.cars()) {
             if (car.getCarName().equals("car1") ||  car.getCarName().equals("car2")) {

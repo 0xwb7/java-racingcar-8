@@ -1,6 +1,7 @@
 package racingcar.service.trycount;
 
 import org.junit.jupiter.api.Test;
+import racingcar.parser.ParseCount;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

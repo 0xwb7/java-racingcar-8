@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class SplitCarName {
-    private final static String SPLIT_DELIMITER = ",";
+    private static final String SPLIT_DELIMITER = ",";
 
     private SplitCarName() {
     }

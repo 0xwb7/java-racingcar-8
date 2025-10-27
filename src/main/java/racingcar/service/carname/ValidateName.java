@@ -28,10 +28,6 @@ public final class ValidateName {
     public static boolean isDuplicated(List<String> carNames) {
         Set<String> carNamesSet = new HashSet<>(carNames);
 
-        if (carNamesSet.size() != carNames.size()) {
-            return true;
-        }
-
-        return false;
+        return carNamesSet.size() != carNames.size();
     }
 }

@@ -7,11 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class SplitCarName {
+    private final static String SPLIT_DELIMITER = ",";
+
     private SplitCarName() {
     }
 
     public static List<String> splitCarName(String carName) {
-        String[] tokens = carName.split(",");
+        String[] tokens = carName.split(SPLIT_DELIMITER);
         List<String> carNames = new ArrayList<>();
 
         for (String token : tokens) {
@@ -26,10 +28,6 @@ public final class SplitCarName {
             }
 
             carNames.add(name);
-        }
-
-        if (carNames.isEmpty()) {
-            throw new RacingException(ErrorCode.AT_LEAST_ONE_CAR);
         }
 
         if (ValidateName.isDuplicated(carNames)) {

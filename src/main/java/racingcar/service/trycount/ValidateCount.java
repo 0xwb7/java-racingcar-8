@@ -8,7 +8,7 @@ public final class ValidateCount {
     }
 
     public static String validateCount(String count) {
-        if (count == null) {
+        if (count == null || count.isBlank()) {
             throw new RacingException(ErrorCode.INPUT_COUNT_NULL);
         }
 

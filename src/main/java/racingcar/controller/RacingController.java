@@ -1,36 +1,35 @@
 package racingcar.controller;
 
+import racingcar.application.RacingUseCase;
 import racingcar.domain.CarState;
 import racingcar.service.RacingService;
-import racingcar.parser.SplitCarName;
-import racingcar.validator.ValidateName;
-import racingcar.parser.ParseCount;
-import racingcar.validator.ValidateCount;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
-import java.util.List;
-
 public class RacingController {
+    private final RacingUseCase racingUseCase = new RacingUseCase();
+
     public void run() {
         OutputView.printInputName();
         String carName = InputView.carNameInput();
-        List<String> carNames = SplitCarName.splitCarName(ValidateName.validateName(carName));
 
         OutputView.printInputNum();
         String count = InputView.numberInput();
-        int tryCount = ParseCount.parseCount(ValidateCount.validateCount(count));
 
-        RacingService racingService = RacingService.of(carNames, tryCount);
+        RacingService game = racingUseCase.returnElement(carName, count);
+        playGame(game);
+    }
 
+    private void playGame(RacingService game) {
         OutputView.printResult();
-        for (int round = 0; round < racingService.rounds(); round++) {
-            for (CarState carState : racingService.playRound()) {
-                OutputView.printRound(carState.carName(), carState.position());
+
+        for (int round = 0; round < game.rounds(); round++) {
+            for (CarState carstate : game.playRound()) {
+                OutputView.printRound(carstate.carName(), carstate.position());
             }
 
             OutputView.println();
         }
-        OutputView.printWinner(racingService.winners());
+        OutputView.printWinner(game.winners());
     }
 }

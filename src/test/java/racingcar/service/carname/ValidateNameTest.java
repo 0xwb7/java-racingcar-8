@@ -32,9 +32,12 @@ class ValidateNameTest {
 
     @Test
     void 자동차_이름이_중복이면_True를_반환한다() {
-        var carNames = List.of("car1", "car1");
-        boolean result = ValidateName.isDuplicated(carNames);
+        var duplicated_carNames = List.of("car1", "car1");
+        var no_duplicated_carNames = List.of("car1", "car2");
+        boolean duplicated = ValidateName.isDuplicated(duplicated_carNames);
+        boolean no_duplicated = ValidateName.isDuplicated(no_duplicated_carNames);
 
-        assertThat(result).isTrue();
+        assertThat(duplicated).isTrue();
+        assertThat(no_duplicated).isFalse();
     }
 }

@@ -13,7 +13,7 @@ public final class SplitCarName {
     }
 
     public static List<String> splitCarName(String carName) {
-        String[] tokens = carName.split(SPLIT_DELIMITER);
+        String[] tokens = carName.split(SPLIT_DELIMITER, -1);
         List<String> carNames = new ArrayList<>();
 
         for (String token : tokens) {

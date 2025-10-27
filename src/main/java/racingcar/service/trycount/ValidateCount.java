@@ -12,12 +12,6 @@ public final class ValidateCount {
             throw new RacingException(ErrorCode.INPUT_COUNT_NULL);
         }
 
-        String trimmedCount = count.trim();
-
-        if (trimmedCount.isEmpty()) {
-            throw new RacingException(ErrorCode.INPUT_COUNT_EMPTY);
-        }
-
-        return trimmedCount;
+        return count.trim();
     }
 }
